@@ -1,0 +1,19 @@
+{% include "header.html" %}
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+{% block body %}
+<div class="container">
+    <h2>Admin Panel</h2>
+
+    <form method="GET" action="{{ url_for('admin_users') }}" style="display: inline;">
+        <button type="submit" class="btn btn-info">Users Table</button>
+    </form>
+
+    <form method="GET" action="{{ url_for('admin_credentials') }}" style="display: inline;">
+        <button type="submit" class="btn btn-warning">Credentials Table</button>
+    </form>
+
+    <form method="GET" action="{{ url_for('logout') }}" style="display: inline; float: right;">
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+</div>
+{% endblock %}
